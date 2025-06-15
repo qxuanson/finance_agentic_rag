@@ -1,0 +1,16 @@
+chromadb
+langchain_experimental 
+langchain_huggingface
+langchain-community
+langchain 
+rank_bm25
+langchain-chroma
+flashrank
+python-dotenv==1.0.1
+pandas
+oauth2client
+flask_cors
+streamlit
+google-adk
+google-genai
+einops
