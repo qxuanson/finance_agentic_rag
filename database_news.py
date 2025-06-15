@@ -65,12 +65,12 @@ embeddings = HuggingFaceEmbeddings(model_name="nomic-ai/nomic-embed-text-v1.5",
                                        model_kwargs=model_kwargs)
 db = Chroma(
     collection_name="news",
-    persist_directory="D:/agentic_rag_finance/news_chromadb",  
+    persist_directory="news_chromadb",  
 )
 vectorstore = db.from_documents(all_chunked_documents, embeddings)
 
 
-save_path = "D:/agentic_rag_finance/chunked_documents_news.pkl"
+save_path = "chunked_documents_news.pkl"
 
 with open(save_path, 'wb') as f:
     pickle.dump(all_chunked_documents, f)
