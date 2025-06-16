@@ -3,7 +3,6 @@ import os
 login(os.environ["HF_TOKEN"])
 import litellm
 litellm.drop_params = True
-# Part of agent.py --> Follow https://google.github.io/adk-docs/get-started/quickstart/ to learn the setup
 from google.adk.agents import LlmAgent, SequentialAgent, LoopAgent
 from google.adk.tools import ToolContext
 from google.adk.agents import Agent
@@ -30,9 +29,9 @@ from google.adk.models.lite_llm import LiteLlm
 from rag_news import rag_news
 from rag_index import rag_index
 LLM_MODEL = "huggingface/together/Qwen/Qwen2.5-7B-Instruct"
-SEARCH_MODEL = "gemini-2.5-flash-preview-05-20"
+SEARCH_GOOGLE_MODEL = "gemini-2.5-flash-preview-05-20"
 search_agent = Agent(
-    model=SEARCH_MODEL,
+    model=SEARCH_GOOGLE_MODEL,
     name='SearchAgent',
     instruction=""",
     Trả lời câu hỏi của người dùng trực tiếp bằng công cụ tìm kiếm Google; Cung cấp câu trả lời ngắn gọn và súc tích.
@@ -48,7 +47,7 @@ search_agent = Agent(
 
 search_google_agent = Agent(
     name="search_google_agent",
-    model=SEARCH_MODEL,
+    model=SEARCH_GOOGLE_MODEL,
     description="Search Agent",
     tools=[agent_tool.AgentTool(agent=search_agent)],
 )
