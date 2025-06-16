@@ -2,12 +2,10 @@ from langchain.retrievers import BM25Retriever, EnsembleRetriever
 from langchain.vectorstores import Chroma
 import pickle
 from rag import query_rag
-
+from database_index import embeddings
 def rag_index(query_text):
-    chroma_client = Chroma(persist_directory="/index_chromadb")
-    collection_name = "index"
+    vectorstore = Chroma(persist_directory="/news_chromadb", collection_name = "news", embedding_function=embeddings)
     all_chunked_documents = pickle.load(open("/chunked_documents_index.pkl", "rb"))
-    vectorstore = chroma_client.get_collection(name=collection_name)
     vectorstore_retreiver = vectorstore.as_retriever(search_kwargs={"k": 10})
     keyword_retriever = BM25Retriever.from_documents(all_chunked_documents)
     keyword_retriever.k =  10
