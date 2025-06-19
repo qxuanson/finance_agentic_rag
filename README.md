@@ -17,13 +17,14 @@
     ```
 
 3.  **API Key:**
-    Tạo một tệp `.env` chứa các API cần thiết.
+    Tạo một tệp `.env` trong thư mục `demo` chứa các API cần thiết.
     ```env
     GOOGLE_API_KEY="YOUR_GOOGLE_API_KEY"
+    HUGGINGFACE_KEY="YOUR_HUGGINGFACE_KEY"
+    ...
     ```
 
 4.  **Chạy Ứng dụng:**
-    Chạy google adk:
     ```bash
     adk web
     ```
