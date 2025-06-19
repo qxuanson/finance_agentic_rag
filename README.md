@@ -7,8 +7,8 @@
 
 1.  **Clone Repo:**
     ```bash
-    git clone https://github.com/qxuanson/multi-agents-agentic-rag
-    cd multi-agent-agentic-rag
+    git clone https://github.com/qxuanson/finance_agentic_rag
+    cd finance_agentic_rag
     ```
 
 2.  **Cài đặt thư viện:**
